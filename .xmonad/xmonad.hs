@@ -105,7 +105,6 @@ myStartupHook = do
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     -- spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
-    -- spawnOnce "feh --bg-fill /home/kali/Downloads/wallpaper2.jpg"
     -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
     -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
     -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
@@ -436,7 +435,7 @@ myKeys =
         , ("M-C-k", sendMessage $ pullGroup U)
         , ("M-C-j", sendMessage $ pullGroup D)
         , ("M-C-m", withFocused (sendMessage . MergeAll))
-        -- , ("M-C-u", withFocused (sendMessage . UnMerge))
+        , ("M-C-u", withFocused (sendMessage . UnMerge))
         , ("M-C-/", withFocused (sendMessage . UnMergeAll))
         , ("M-C-.", onGroup W.focusUp')    -- Switch focus to next tab
         , ("M-C-,", onGroup W.focusDown')  -- Switch focus to prev tab
