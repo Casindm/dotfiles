@@ -106,7 +106,7 @@ myStartupHook = do
     spawnOnce "volumeicon &"
     -- spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
     -- spawnOnce "feh --bg-fill /home/kali/Downloads/wallpaper2.jpg"
--- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
+    -- spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
     -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
     -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
     -- spawnOnce "urxvtd -q -o -f &"      -- urxvt daemon for better performance
@@ -407,8 +407,8 @@ myKeys =
         , ("M-k", windows W.focusDown)    -- Move focus to the next window
         , ("M-j", windows W.focusUp)      -- Move focus to the prev window
         , ("M-S-m", windows W.swapMaster) -- Swap the focused window and the master window
-        , ("M-S-j", windows W.swapDown)   -- Swap focused window with next window
-        , ("M-S-k", windows W.swapUp)     -- Swap focused window with prev window
+        , ("M-S-k", windows W.swapDown)   -- Swap focused window with next window
+        , ("M-S-j", windows W.swapUp)     -- Swap focused window with prev window
         , ("M-<Backspace>", promote)      -- Moves focused window to master, others maintain order
         , ("M-S-<Tab>", rotSlavesDown)    -- Rotate all windows except master and keep focus in place
         , ("M-C-<Tab>", rotAllDown)       -- Rotate all the windows in the current stack
@@ -452,9 +452,9 @@ myKeys =
     -- KB_GROUP Set wallpaper
     -- Set wallpaper with 'feh'. Type 'SUPER+F1' to launch sxiv in the wallpapers directory.
     -- Then in sxiv, type 'C-x w' to set the wallpaper that you choose.
-        , ("M-<F1>", spawn "sxiv -r -q -t -o ~/wallpapers/*")
-        , ("M-<F2>", spawn "find ~/wallpapers/ -type f | shuf -n 1 | xargs xwallpaper --stretch")
-        -- , ("M-<F2>", spawn "feh --randomize --bg-fill ~/wallpapers/*")
+        -- , ("M-<F1>", spawn "sxiv -r -q -t -o ~/Wallpapers/*")
+        -- , ("M-<F2>", spawn "find ~/Wallpapers/ -type f | shuf -n 1 | xargs xwallpaper --stretch")
+        , ("M-<F1>", spawn "feh --randomize --bg-fill ~/Wallpapers/*")
 
     -- KB_GROUP Controls for mocp music player (SUPER-u followed by a key)
         , ("M-u p", spawn "mocp --play")
