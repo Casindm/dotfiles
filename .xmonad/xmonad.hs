@@ -73,7 +73,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "alacritty"    -- Sets default terminal
+myTerminal = "lxterminal"    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "qutebrowser "  -- Sets qutebrowser as browser
@@ -100,7 +100,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "setxkbmap es &"
-    spawnOnce "lxsession &"
+    -- spawnOnce "lxsession &"
     spawnOnce "compton &"
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
@@ -183,8 +183,8 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w 
-    spawnCalc  = "qalculate-gtk"
-    findCalc   = className =? "Qalculate-gtk"
+    spawnCalc  = "qalculate"
+    findCalc   = className =? "Qalculate"
     manageCalc = customFloating $ W.RationalRect l t w h
                where
                  h = 0.5
@@ -525,7 +525,7 @@ main = do
                 --              >> hPutStrLn xmproc1 x                        -- xmobar left when split
               , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]"           -- "<box type=Bottom width=2 mb=2 color=#c792ea>" "</box>"         -- Current workspace
               , ppVisible = xmobarColor "#98be65" ""                          -- Visible but not current workspace
-              , ppHidden = xmobarColor "#82AAFF" "" . wrap "<box type=Bottom width=2 mt=2 color=#82AAFF>" "</box>" -- Hidden workspaces
+              , ppHidden = xmobarColor "#98be65" ""                           -- "<box type=Bottom width=2 mt=2 color=#82AAFF>" "</box>" -- Hidden workspaces
               , ppHiddenNoWindows = xmobarColor "#c792ea" ""                  -- Hidden workspaces (no windows)
               , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window
               , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character

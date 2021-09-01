@@ -1,21 +1,21 @@
 Config { font    = "xft:Ubuntu:weight=bold:pixelsize=12:antialias=true:hinting=true"
        , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true"
-                           , "xft:Font Awesome 5 Free Solid:pixelsize=12"
+                           , "xft:FontAwesome:pixelsize=12"
                            , "xft:Font Awesome 5 Brands:pixelsize=12"
                            ]
-       , bgColor = "#282c34"
+       , bgColor = "#282c34"  -- Redpi #E62025
        , fgColor = "#ff6c6b"
        , position = TopSize C 100 25
        , lowerOnStart = True
        , hideOnStart = False
        , allDesktops = True
        , persistent = True
-       , iconRoot = "/home/leyner/.xmonad/xpm/"
+       , iconRoot = "/home/pi/.xmonad/xpm/"
        , commands = [
                     -- Time and date
                       Run Date "  <fn=2>\xf017</fn>  %b %d %Y - (%H:%M) " "date" 50
                       -- Network up and down
-                    , Run Network "enp0s3" ["-t", "  <fn=2>\xf0aa</fn>  <tx>kb  <fn=2>\xf0ab</fn>  <rx>kb"] 20
+                    , Run Network "wlan0" ["-t", "  <fn=2>\xf0aa</fn>  <tx>kb  <fn=2>\xf0ab</fn>  <rx>kb"] 20
                       -- Cpu usage in percent
                     , Run Cpu ["-t", "  <fn=2>\xf108</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
                       -- Ram used number and percent
@@ -28,5 +28,5 @@ Config { font    = "xft:Ubuntu:weight=bold:pixelsize=12:antialias=true:hinting=t
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %StdinReader% }{ <box type=Bottom width=2 mb=2 color=#51afef><fc=#51afef> %uname%</fc></box><box type=Bottom width=2 mb=2 color=#ecbe7b><fc=#ecbe7b>%cpu%</fc></box><box type=Bottom width=2 mb=2 color=#ff6c6b><fc=#ff6c6b>%memory%</fc></box><box type=Bottom width=2 mb=2 color=#a9a1e1><fc=#a9a1e1>%disku%</fc></box><box type=Bottom width=2 mb=2 color=#98be65><fc=#98be65>%enp0s3%</fc></box><box type=Bottom width=2 mb=2 color=#46d9ff><fc=#46d9ff>%date%</fc></box>"
+       , template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %StdinReader% }{ <fc=#51afef> %uname%</fc><fc=#ecbe7b>%cpu%</fc><fc=#ff6c6b>%memory%</fc><fc=#a9a1e1>%disku%</fc><fc=#98be65>%wlan0%</fc><fc=#46d9ff>%date%</fc>"
        }
