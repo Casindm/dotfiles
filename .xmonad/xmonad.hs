@@ -101,7 +101,7 @@ myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "setxkbmap es &"
     spawnOnce "lxsession &"
-    spawnOnce "compton &"
+    spawnOnce "picom &"
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     -- spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
